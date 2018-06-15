@@ -13,9 +13,10 @@ public class Functions {
     private ST<Integer,String> SymTab_artID;
 
 
-    public Functions(WeightedDirectedGraph friends, WeightedDirectedGraph music){
+    public Functions(WeightedDirectedGraph friends, WeightedDirectedGraph music, ST table){
         this.g_friends = friends;
         this.g_music = music;
+        this.SymTab_artID = table;
     }
 
     //	****************** LIST FRIENDS ***************************
@@ -89,11 +90,15 @@ public class Functions {
         Collections.reverse(scoreArray);
         // use top 10 values, and get those keys from the map
         System.out.println("Top 10 Ranking is:");
+        System.out.printf("%-22s%-22s%-22s%-22s\n", "Rank", "Name","ID","Count");
         for(int i = 0; i < 10; i++){
             int findVal = scoreArray.get(i);
             for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
                 if(findVal == entry.getValue()){
-                    System.out.println("\trank " + (i+1) + ": " +  entry);
+//                    System.out.println("\trank " + (i+1) + ": ID:" +  entry.getKey() + "\t\t" +  SymTab_artID.get(entry.getKey()));
+//                    System.out.println("\trank " + (i+1) + ": " + SymTab_artID.get(entry.getKey()) + "\t\tID: " + entry.getKey() + "\t\tCount: " + entry.getValue());
+                    System.out.printf("%-22s%-22s%-22s%-22s\n", (i+1), SymTab_artID.get(entry.getKey()),entry.getKey(),entry.getValue());
+
                 }
             }
         }
@@ -126,11 +131,13 @@ public class Functions {
         Collections.sort(scoreArray);
         Collections.reverse(scoreArray);
         System.out.println("friends of " + user + " recommend the following:");
+        System.out.printf("%-22s%-22s%-22s%-22s\n", "Rank", "Name","ID","Count");
         for(int i = 0; i < 10; i++){
             int findVal = scoreArray.get(i);
             for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
                 if(findVal == entry.getValue()){
-                    System.out.println("\trank " + (i+1) + ": " +  entry);
+//                    System.out.println("\trank " + (i+1) + ": " +  entry + "\t\t" +  SymTab_artID.get(entry.getKey()));
+                    System.out.printf("%-22s%-22s%-22s%-22s\n", (i+1), SymTab_artID.get(entry.getKey()),entry.getKey(),entry.getValue());
                 }
             }
         }
