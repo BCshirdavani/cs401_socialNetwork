@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.*;
 
+import static java.lang.Integer.parseInt;
+
 public class MainClient {
 
 
@@ -10,18 +12,23 @@ public class MainClient {
 
 		// TODO: load real data now
 		// TODO: add hash table to connect names with ID's
+///Users/shimac/Documents/ComputerSci/cs401_algo/hw04/cs401_socialNetwork/dataset/artists.dat
 
-
-		int friendVert = 20;
-		int musicVert = 20;
+		int friendVert = 2101;	// was 1892
+		int musicVert = 17632;
 		WeightedDirectedGraph friend_g = new WeightedDirectedGraph(friendVert);
 		WeightedDirectedGraph music_g = new WeightedDirectedGraph(musicVert);
 
 		// make friends graph
-		Scanner friends = new Scanner(new File("Friends.txt"));
-		while(friends.hasNextLine()){
-			int v = friends.nextInt();
-			int w = friends.nextInt();
+		Scanner fr_scan = new Scanner(new File("dataset/user_friends.dat"));
+//		fr_scan.useDelimiter("\t");
+		fr_scan.nextLine();
+		while(fr_scan.hasNextLine()){
+//			int v = fr_scan.nextInt();
+//			int w = fr_scan.nextInt();
+			int v = parseInt(fr_scan.next());
+			int w = parseInt(fr_scan.next());
+			System.out.println("v: " + v + ", w: " + w + "\t\t edges: " + friend_g.getEdges() + " vert: " + friend_g.getVertices());
 			DirectedEdge edge = new DirectedEdge(v, w, 0);
 			friend_g.addEdge(edge);
 			System.out.println(edge);
@@ -35,22 +42,26 @@ public class MainClient {
 
 		// make music graph
 		System.out.println("music graph");
-		Scanner music = new Scanner(new File("Music.txt"));
-		while(music.hasNextLine()){
-			int v = music.nextInt();
-			int w = music.nextInt();
-			int weight = music.nextInt();
+		Scanner mus_scan = new Scanner(new File("dataset/user_artists.dat"));
+		mus_scan.nextLine();
+		while(mus_scan.hasNextLine()){
+//			int v = mus_scan.nextInt();
+//			int w = mus_scan.nextInt();
+			int v = parseInt(mus_scan.next());
+			int w = parseInt(mus_scan.next());
+//			int weight = mus_scan.nextInt();
+			int weight = parseInt(mus_scan.next());
 			DirectedEdge edge = new DirectedEdge(v, w, weight);
 			music_g.addEdge(edge);
 			System.out.println(edge);
 		}
 
 		// Friends of 1 like this
-		System.out.println("(1) has friends who like this stuff:");
-		for(DirectedEdge w:friend_g.adj(1)){
+		System.out.println("\t(2) has friends who like this stuff:");
+		for(DirectedEdge w:friend_g.adj(2)){
 			int vert = w.to();
 			for(DirectedEdge j:music_g.adj(vert)){
-				System.out.println(j);
+				System.out.println("\t\t friend of (2): " + j);
 			}
 		}
 
