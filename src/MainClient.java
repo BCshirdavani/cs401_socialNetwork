@@ -28,77 +28,112 @@ public class MainClient {
 //			int w = fr_scan.nextInt();
 			int v = parseInt(fr_scan.next());
 			int w = parseInt(fr_scan.next());
-			System.out.println("v: " + v + ", w: " + w + "\t\t edges: " + friend_g.getEdges() + " vert: " + friend_g.getVertices());
+//			System.out.println("v: " + v + ", w: " + w + "\t\t edges: " + friend_g.getEdges() + " vert: " + friend_g.getVertices());
 			DirectedEdge edge = new DirectedEdge(v, w, 0);
 			friend_g.addEdge(edge);
-			System.out.println(edge);
+//			System.out.println(edge);
 		}
 
-		// who is friends with 1
-		System.out.println("adjascent from (1): ");
-		for(DirectedEdge w:friend_g.adj(1)){
-			System.out.println(w);
-		}
+//		//	****************** LIST FRIENDS ********************************
+//		// who is friends with 2
+//		System.out.println("adjascent from (2): ");
+//		for(DirectedEdge w:friend_g.adj(2)){
+//			System.out.println(w);
+//		}
+//
+//
+//		//	****************** COMMON FRIENDS ******************************
+//		System.out.println("common friends (2) and (275): ");
+//		for(DirectedEdge w:friend_g.adj(2)){
+//			System.out.println(w);
+//		}
+
+
+
 
 		// make music graph
-		System.out.println("music graph");
+//		System.out.println("music graph");
 		Scanner mus_scan = new Scanner(new File("dataset/user_artists.dat"));
 		mus_scan.nextLine();
 		while(mus_scan.hasNextLine()){
-//			int v = mus_scan.nextInt();
-//			int w = mus_scan.nextInt();
 			int v = parseInt(mus_scan.next());
 			int w = parseInt(mus_scan.next());
-//			int weight = mus_scan.nextInt();
 			int weight = parseInt(mus_scan.next());
 			DirectedEdge edge = new DirectedEdge(v, w, weight);
 			music_g.addEdge(edge);
-			System.out.println(edge);
+//			System.out.println(edge);
 		}
 
-		// Friends of 1 like this
-		System.out.println("\t(2) has friends who like this stuff:");
-		for(DirectedEdge w:friend_g.adj(2)){
-			int vert = w.to();
-			for(DirectedEdge j:music_g.adj(vert)){
-				System.out.println("\t\t friend of (2): " + j);
-			}
-		}
+//		// Friends of 2 like this
+//		System.out.println("\t(2) has friends who like this stuff:");
+//		for(DirectedEdge w:friend_g.adj(2)){
+//			int vert = w.to();
+//			for(DirectedEdge j:music_g.adj(vert)){
+//				System.out.println("\t\t friend of (2): " + j);
+//			}
+//		}
 
-		// Global music rank
-		TreeMap<Integer, Integer> musicMap = new TreeMap<Integer, Integer>();
-		musicMap.put(11,0);
-		musicMap.put(12,0);
-		musicMap.put(13,0);
-		for(int i = 1; i <= 3; i++){
-			for(DirectedEdge w:music_g.adj(i)){
-				int old = musicMap.get(w.to());
-				int newData = (int)w.weight();
-				musicMap.put(w.to(), old + newData);
-			}
-		}
-		System.out.println("printing musicMap:\n" + musicMap);
-		// TODO: program works...but very sensitive to index bounds in loops referencing adj[]
+		System.out.println("*****************************************");
+		// TEST FUNCITONS
+		Functions func = new Functions(friend_g, music_g);
+//		func.listFriends(46);
+//		func.commonFriends(46,58);
+//		func.listArtists(2, 275);
+		func.listTop10();
+		func.recommend10(66);
 
-		// sorting the top artists
-		// put scores into array list
-		ArrayList<Integer> scoreArray = new ArrayList<Integer>();
-		for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
-			scoreArray.add(entry.getValue());
-		}
-		System.out.println(scoreArray);
-		Collections.sort(scoreArray);
-		Collections.reverse(scoreArray);
-		System.out.println(scoreArray);
-		// use top 10 values, and get those keys from the map
-		for(int i = 0; i < 2; i++){
-			int findVal = scoreArray.get(i);
-			for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
-				if(findVal == entry.getValue()){
-					System.out.println("rank " + (i+1) + ": " +  entry);
-				}
-			}
-		}
+
+//
+//
+//		// *********** TOP 10 GLOBAL *****************************************
+//		// Global music rank scores to map
+//		TreeMap<Integer, Integer> musicMap = new TreeMap<Integer, Integer>();
+//		// for each vertex
+//			// for each adj edge
+//				// add to sum for the artist pointing to
+//		for(int i = 0; i < music_g.getVertices(); i++){
+//			for(DirectedEdge edge : music_g.adj(i)){
+//				Integer artKey = edge.to();
+//				Integer newW = (int)edge.weight();
+//				//	update old value if found in map
+//				if(musicMap.containsKey(artKey)){
+//					Integer oldW = musicMap.get(artKey);
+//					musicMap.put(artKey,(newW + oldW));
+//				}
+//				//	add to map if does not exist
+//				else if (!(musicMap.containsKey(artKey))){
+//					musicMap.put(artKey, newW);
+//				}
+//			}
+//		}
+//		// sorting the top artists
+//		// put scores into array list
+//		ArrayList<Integer> scoreArray = new ArrayList<Integer>();
+//		for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
+//			scoreArray.add(entry.getValue());
+//		}
+////		System.out.println(scoreArray);
+//		Collections.sort(scoreArray);
+//		Collections.reverse(scoreArray);
+////		System.out.println(scoreArray);
+//		// use top 10 values, and get those keys from the map
+//		for(int i = 0; i < 10; i++){
+//			int findVal = scoreArray.get(i);
+//			for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
+//				if(findVal == entry.getValue()){
+//					System.out.println("rank " + (i+1) + ": " +  entry);
+//				}
+//			}
+//		}
+//
+//
+//		// ************** RECOMMEND 10 ********************
+//		// for each friend
+//			// for each adj artist
+//				// add sum to artist map
+//
+
+
 	}
 
 

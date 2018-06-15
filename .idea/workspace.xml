@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae18876a-9853-496e-9688-ede85d11d104" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cs401_socialNetwork/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cs401_socialNetwork/MainClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClient.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -13,20 +16,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.831309">
+    <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.44369134">
+        <splitter split-orientation="horizontal" split-proportion="0.41646606">
           <split-first>
             <leaf>
               <file leaf-file-name="MainClient.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/MainClient.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="781">
-                      <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-                      <folding>
-                        <element signature="e#1922#1940#0" expanded="true" />
-                        <element signature="e#2541#2550#0" expanded="true" />
-                      </folding>
+                    <state relative-caret-position="638">
+                      <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
                     </state>
                   </provider>
                 </entry>
@@ -34,19 +33,39 @@
             </leaf>
           </split-first>
           <split-second>
-            <splitter split-orientation="horizontal" split-proportion="0.5359067">
+            <splitter split-orientation="horizontal" split-proportion="0.63809526">
               <split-first>
                 <leaf>
-                  <file leaf-file-name="WeightedDirectedGraph.java" pinned="false" current-in-tab="true">
+                  <file leaf-file-name="WeightedDirectedGraph.java" pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/src/WeightedDirectedGraph.java">
                       <provider selected="true" editor-type-id="text-editor">
                         <state>
-                          <caret column="34" selection-start-column="34" selection-end-column="34" />
+                          <caret column="22" lean-forward="true" selection-end-line="1" />
                           <folding>
                             <element signature="e#963#964#0" expanded="true" />
                             <element signature="e#985#986#0" expanded="true" />
                             <element signature="e#1010#1011#0" expanded="true" />
                             <element signature="e#1029#1030#0" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file leaf-file-name="Functions.java" pinned="false" current-in-tab="true">
+                    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="697">
+                          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+                          <folding>
+                            <element signature="imports" expanded="true" />
+                            <element signature="e#751#760#0" expanded="true" />
+                            <element signature="e#818#827#0" expanded="true" />
+                            <element signature="e#1614#1623#0" expanded="true" />
+                            <element signature="e#1681#1690#0" expanded="true" />
+                            <element signature="e#2287#2305#0" expanded="true" />
+                            <element signature="e#3048#3057#0" expanded="true" />
+                            <element signature="e#3820#3838#0" expanded="true" />
+                            <element signature="e#4636#4645#0" expanded="true" />
                           </folding>
                         </state>
                       </provider>
@@ -85,14 +104,18 @@
         <leaf>
           <file leaf-file-name="artists.dat" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dataset/artists.dat">
-              <provider selected="true" editor-type-id="text-editor" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="477">
+                  <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+                </state>
+              </provider>
             </entry>
           </file>
           <file leaf-file-name="user_friends.dat" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dataset/user_friends.dat">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="8" />
+                <state relative-caret-position="402">
+                  <caret line="452" column="6" lean-forward="true" selection-start-line="449" selection-start-column="5" selection-end-line="452" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -100,7 +123,7 @@
           <file leaf-file-name="user_artists.dat" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dataset/user_artists.dat">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="908">
+                <state relative-caret-position="1346033">
                   <caret line="92834" column="19" selection-start-line="92834" selection-start-column="19" selection-end-line="92834" selection-end-column="19" />
                 </state>
               </provider>
@@ -109,6 +132,13 @@
         </leaf>
       </split-second>
     </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,6 +152,7 @@
         <option value="$PROJECT_DIR$/Music.txt" />
         <option value="$PROJECT_DIR$/dataset/user_friends.dat" />
         <option value="$PROJECT_DIR$/dataset/user_artists.dat" />
+        <option value="$PROJECT_DIR$/src/Functions.java" />
         <option value="$PROJECT_DIR$/src/MainClient.java" />
       </list>
     </option>
@@ -252,7 +283,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -262,7 +292,7 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20261942" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1255778" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
@@ -329,10 +359,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Friends.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/user_artists.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1346033">
+          <caret line="92834" column="19" selection-start-line="92834" selection-start-column="19" selection-end-line="92834" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/artists.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WeightedDirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="34" selection-start-column="34" selection-end-column="34" />
+          <caret column="22" lean-forward="true" selection-end-line="1" />
           <folding>
             <element signature="e#963#964#0" expanded="true" />
             <element signature="e#985#986#0" expanded="true" />
@@ -342,38 +393,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Friends.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/artists.dat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset/user_artists.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="908">
-          <caret line="92834" column="19" selection-start-line="92834" selection-start-column="19" selection-end-line="92834" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataset/user_friends.dat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="402">
+          <caret line="452" column="6" lean-forward="true" selection-start-line="449" selection-start-column="5" selection-end-line="452" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#751#760#0" expanded="true" />
+            <element signature="e#818#827#0" expanded="true" />
+            <element signature="e#1614#1623#0" expanded="true" />
+            <element signature="e#1681#1690#0" expanded="true" />
+            <element signature="e#2287#2305#0" expanded="true" />
+            <element signature="e#3048#3057#0" expanded="true" />
+            <element signature="e#3820#3838#0" expanded="true" />
+            <element signature="e#4636#4645#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#1922#1940#0" expanded="true" />
-            <element signature="e#2541#2550#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="638">
+          <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
         </state>
       </provider>
     </entry>
