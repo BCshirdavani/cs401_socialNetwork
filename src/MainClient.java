@@ -12,8 +12,6 @@ public class MainClient {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		// TODO: add hash table to connect names with ID's
-
 		int friendVert = 2101;	// was 1892
 		int musicVert = 17632;
 		WeightedDirectedGraph friend_g = new WeightedDirectedGraph(friendVert);
@@ -46,7 +44,6 @@ public class MainClient {
 		Scanner art_scan = new Scanner(new File("dataset/artists.dat"));
 		art_scan.useDelimiter("\t");
 		String garbage = art_scan.nextLine();
-		System.out.println("garbage: " + garbage);
 		while(art_scan.hasNextLine()){
 			String line = art_scan.nextLine();
 			String[] parts = line.split("\t");
@@ -56,12 +53,12 @@ public class MainClient {
 		}
 
 
-		System.out.println("*****************************************");
+		System.out.println("*************************************************");
 		// TEST FUNCITONS
 		Functions func = new Functions(friend_g, music_g, symbolTable);
-//		func.listFriends(46);
-//		func.commonFriends(46,58);
-//		func.listArtists(2, 275);
+		func.listFriends(46);
+		func.commonFriends(46,58);
+		func.listArtists(2, 275);
 		func.listTop10();
 		func.recommend10(66);
 

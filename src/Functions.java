@@ -59,7 +59,7 @@ public class Functions {
         System.out.println(user1 + " and " + user2 + " both listen to these artists:");
         for(int i = 0; i < artOf_1.size(); i++){
             if(artOf_2.contains(i)){
-                System.out.println("\t" + i);
+                System.out.println("\t"+ SymTab_artID.get(i));
             }
         }
     }
