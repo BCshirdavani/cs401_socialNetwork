@@ -1,24 +1,16 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MainClient {
 
 
 	public static void main(String[] args) throws FileNotFoundException {
-//		ArrayList thing = new ArrayList(10);
-//		thing.add(1);
-//		thing.add(5);
-//		System.out.println(thing.contains(1));
-//		System.out.println(thing.contains(2));
-//		System.out.println(thing.size());
-//		System.out.println("thing.get(0): " + thing.get(0));
-//		System.out.println("thing.get(1): " + thing.get(1));
-//		System.out.println("thing.indexOf(5): " + thing.indexOf(5));
+
+		// TODO: load real data now
+		// TODO: add hash table to connect names with ID's
+
 
 		int friendVert = 20;
 		int musicVert = 20;
@@ -78,9 +70,24 @@ public class MainClient {
 		// TODO: program works...but very sensitive to index bounds in loops referencing adj[]
 
 		// sorting the top artists
-		// TODO: sort by value, the map of artists and their weights
-
-
+		// put scores into array list
+		ArrayList<Integer> scoreArray = new ArrayList<Integer>();
+		for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
+			scoreArray.add(entry.getValue());
+		}
+		System.out.println(scoreArray);
+		Collections.sort(scoreArray);
+		Collections.reverse(scoreArray);
+		System.out.println(scoreArray);
+		// use top 10 values, and get those keys from the map
+		for(int i = 0; i < 2; i++){
+			int findVal = scoreArray.get(i);
+			for(Map.Entry<Integer,Integer> entry : musicMap.entrySet()){
+				if(findVal == entry.getValue()){
+					System.out.println("rank " + (i+1) + ": " +  entry);
+				}
+			}
+		}
 	}
 
 
